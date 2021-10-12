@@ -1,5 +1,8 @@
 FROM opcycle/openjdk:11
 
+LABEL maintainer="OpCycle <oss@opcycle.net>"
+LABEL repository="https://github.com/opcycle/docker-jenkins"
+
 ENV JENKINS_USER="jenkins" \
     JENKINS_UID="8983" \
     JENKINS_GROUP="jenkins" \
