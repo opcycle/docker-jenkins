@@ -16,8 +16,9 @@ COPY jenkins /opt/jenkins
 RUN chmod +x /opt/jenkins/jenkins
 RUN curl -L $JENKINS_DIST_URL --output /opt/jenkins/jenkins.war \
     && chown jenkins:jenkins -R /opt/jenkins \
+    && dnf -y install dnf-plugins-core
     && dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo \
-    && dnf install docker-ce docker-ce-cli \
+    && dnf -y install docker-ce docker-ce-cli \
     && dnf clean all
 
 VOLUME /opt/jenkins/data
